@@ -2315,7 +2315,7 @@ a:focus, button:focus {
 }
 
 .skill-name {
-  flex: 1;
+  flex: 0 1 80%;
   font-weight: 500;
   color: var(--text-primary);
 }
