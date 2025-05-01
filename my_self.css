@@ -107,9 +107,10 @@ img {
 
 /* Hero Section */
 #intro {
-  padding: 6rem 0 3rem;
+  padding: 5rem 0;
+  overflow: auto;
+  width: 100%;
   background: var(--bg-primary);
-  position: relative;
   h3{
     color: var(--text-primary);
   }
@@ -125,7 +126,11 @@ img {
   background-image: radial-gradient(circle at 10% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 80%);
   z-index: 0;
 }
-
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 #cont {
   opacity: 0;
   transform: translateY(30px);
@@ -373,6 +378,8 @@ img {
 .timeline {
   position: relative;
   padding: 2rem 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .timeline::before {
@@ -384,7 +391,6 @@ img {
   width: 2px;
   height: 100%;
   background-color: var(--border-color);
-  z-index: -1;
 }
 
 .timeline-item {
@@ -589,7 +595,7 @@ footer {
   }
   
   #feature .fe-box {
-    width: 160px;
+    min-width: 160px;
     height: 160px;
     padding: 1.5rem 1rem;
   }
@@ -1230,7 +1236,7 @@ html {
   box-shadow: var(--shadow-md);
   border-radius: 12px;
   padding: 2rem;
-  height: 100%;
+  min-height: 60%;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -1754,6 +1760,11 @@ a:focus, button:focus {
 
 /* Mobile Navigation Styles */
 @media (max-width: 991px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    flex-direction: column;
+  }
   #nav_bar {
     flex-direction: column;
     position: fixed;
@@ -1897,8 +1908,7 @@ a:focus, button:focus {
 /* Fix for scrolling issues on mobile */
 @media (max-width: 480px) {
   html, body {
-    overflow-x: hidden;
-    width: 100%;
+    flex-direction: column;
   }
   
   .container {

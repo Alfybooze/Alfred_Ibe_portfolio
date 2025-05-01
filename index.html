@@ -30,7 +30,6 @@
             <a class="nav-link" href="Contact.html">Contact</a>
         </li>
     </ul>
-    
     <div class="container-fluid" id="intro">
         <div class="row gx-0" id="cont">
             <div class="col-md-8 p-4">
@@ -172,72 +171,73 @@
             elements.forEach(el => observer.observe(el));
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Create navigation toggle button and overlay
-            const navBar = document.getElementById('nav_bar');
-            const body = document.body;
-            
-            // Create the toggle button
-            const navToggle = document.createElement('button');
-            navToggle.className = 'nav-toggle';
-            navToggle.setAttribute('aria-label', 'Toggle navigation');
-            navToggle.innerHTML = `
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            `;
-            
-            // Create overlay for mobile menu background
-            const navOverlay = document.createElement('div');
-            navOverlay.className = 'nav-overlay';
-            
-            // Add elements to the DOM
-            body.appendChild(navToggle);
-            body.appendChild(navOverlay);
-            
-            // Toggle navigation when button is clicked
-            navToggle.addEventListener('click', function() {
-                navBar.classList.toggle('active');
-                navToggle.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                
-                // Prevent body scrolling when menu is open
-                if (navBar.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = '';
-                }
-            });
-            
-            // Close menu when clicking outside
-            navOverlay.addEventListener('click', function() {
-                navBar.classList.remove('active');
-                navToggle.classList.remove('active');
-                navOverlay.classList.remove('active');
-                body.style.overflow = '';
-            });
-            
-            // Close menu when clicking a nav link
-            const navLinks = document.querySelectorAll('#nav_bar .nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navBar.classList.remove('active');
-                    navToggle.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    body.style.overflow = '';
-                });
-            });
-            
-            // Close menu on window resize if it enters desktop mode
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 991 && navBar.classList.contains('active')) {
-                    navBar.classList.remove('active');
-                    navToggle.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    body.style.overflow = '';
-                }
-            });
+        // Mobile Navigation Toggle Script
+document.addEventListener("DOMContentLoaded", function() {
+    // Create navigation toggle button and overlay
+    const navBar = document.getElementById('nav_bar');
+    const body = document.body;
+    
+    // Create the toggle button
+    const navToggle = document.createElement('button');
+    navToggle.className = 'nav-toggle';
+    navToggle.setAttribute('aria-label', 'Toggle navigation');
+    navToggle.innerHTML = `
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    `;
+    
+    // Create overlay for mobile menu background
+    const navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    
+    // Add elements to the DOM
+    body.appendChild(navToggle);
+    body.appendChild(navOverlay);
+    
+    // Toggle navigation when button is clicked
+    navToggle.addEventListener('click', function() {
+        navBar.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        
+        // Prevent body scrolling when menu is open
+        if (navBar.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking outside
+    navOverlay.addEventListener('click', function() {
+        navBar.classList.remove('active');
+        navToggle.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.style.overflow = '';
+    });
+    
+    // Close menu when clicking a nav link
+    const navLinks = document.querySelectorAll('#nav_bar .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navBar.classList.remove('active');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+            body.style.overflow = '';
         });
+    });
+    
+    // Close menu on window resize if it enters desktop mode
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 991 && navBar.classList.contains('active')) {
+            navBar.classList.remove('active');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+});
     </script>
 </body>
 </html>
