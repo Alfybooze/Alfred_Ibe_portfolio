@@ -107,8 +107,7 @@ img {
 
 /* Hero Section */
 #intro {
-  padding: 5rem 0;
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   background: var(--bg-primary);
   h3{
@@ -507,7 +506,7 @@ footer {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .animate-on-scroll.in-view {
