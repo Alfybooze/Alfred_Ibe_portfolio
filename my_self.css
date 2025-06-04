@@ -2562,3 +2562,323 @@ body.dark-theme {
       grid-template-columns: repeat(2, 1fr);
   }
 }
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+#feature .fe-box:nth-child(odd) i {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+#feature .fe-box:nth-child(even) i {
+    opacity: 0;
+    animation: slideInRight 0.8s ease forwards;
+}
+
+#feature .fe-box:nth-child(1) i {
+    animation-delay: 0.2s;
+}
+
+#feature .fe-box:nth-child(2) i {
+    animation-delay: 0.4s;
+}
+
+#feature .fe-box:nth-child(3) i {
+    animation-delay: 0.6s;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Add floating animation to your profile image */
+#img_con img {
+    /* ...existing code... */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Add floating animation to social media icons */
+#con_logo img {
+    /* ...existing code... */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger the animation for social icons */
+#con_logo a:nth-child(1) img {
+    animation-delay: 0s;
+}
+
+#con_logo a:nth-child(2) img {
+    animation-delay: 0.2s;
+}
+
+#con_logo a:nth-child(3) img {
+    animation-delay: 0.4s;
+}
+/* Typing animation for name */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--accent-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Highlight effect for name */
+.highlight {
+    position: relative;
+    color: var(--accent-color);
+    display: inline-block;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Define the typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Define the blinking cursor animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}
+
+/* Define the glow animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--accent-color),
+                     0 0 10px var(--accent-color),
+                     0 0 15px var(--accent-color);
+    }
+    to {
+        text-shadow: 0 0 10px var(--accent-color),
+                     0 0 20px var(--accent-color),
+                     0 0 30px var(--accent-color);
+    }
+}
+
+/* Enhance the sal ID styles */
+#sal {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+
+#sal:hover .highlight {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* Project container animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add these styles for the project containers */
+.project-highlight {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+/* Make odd numbered projects slide from left */
+.animate-on-scroll:nth-child(odd) .project-highlight {
+    transform: translateX(-100px);
+}
+
+/* Make even numbered projects slide from right */
+.animate-on-scroll:nth-child(even) .project-highlight {
+    transform: translateX(100px);
+}
+
+/* Animation when the element comes into view */
+.animate-on-scroll.in-view .project-highlight {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add hover effect */
+.project-highlight:hover {
+    transform: scale(1.02) !important;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+}
+/* About page animations */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes profilePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+/* Apply animations to elements */
+#img_con img {
+    animation: profilePop 1s ease forwards, borderRotate 8s ease-in-out infinite;
+    border: 3px solid var(--accent-color);
+}
+
+#sal2 {
+    animation: fadeSlideIn 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+#about_content h2 {
+    animation: fadeSlideIn 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+#about_content p {
+    animation: fadeSlideIn 1s ease 0.7s forwards;
+    opacity: 0;
+}
+
+/* Skills section animations */
+.skill-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeSlideIn 0.5s ease forwards;
+}
+
+/* Add staggered delays for skills */
+.skills-list .skill-item:nth-child(1) { animation-delay: 0.2s; }
+.skills-list .skill-item:nth-child(2) { animation-delay: 0.4s; }
+.skills-list .skill-item:nth-child(3) { animation-delay: 0.6s; }
+.skills-list .skill-item:nth-child(4) { animation-delay: 0.8s; }
+.skills-list .skill-item:nth-child(5) { animation-delay: 1s; }
+
+/* Hover effects */
+.skill-item:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+#img_con img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* Character animation for feature boxes */
+@keyframes fadeInChar {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fe-box h6 {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.fe-box h6 span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInChar 0.3s ease forwards;
+}
+
+/* Staggered delays for icons */
+.fe-box:nth-child(1) i {
+    animation-delay: 0.2s;
+}
+
+.fe-box:nth-child(2) i {
+    animation-delay: 0.4s;
+}
+
+.fe-box:nth-child(3) i {
+    animation-delay: 0.6s;
+}
+
+/* Animation triggers when parent is in view */
+.animate-on-scroll.in-view .fe-box h6 span {
+    animation: fadeInChar 0.3s ease forwards;
+}
+
+/* Icon animations */
+.fe-box i {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-on-scroll.in-view .fe-box i {
+    animation: fadeInChar 0.5s ease forwards;
+}

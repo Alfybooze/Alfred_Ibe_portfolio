@@ -35,31 +35,31 @@
         <div class="row gx-0" id="cont">
             <div class="col-md-8 p-4">
                 <div class="me-auto" style="width: 300px;" id="Intro">
-                    <h2 class="mb-3">
+                    <h2 class="mb-3" style="margin-right:70px">
                         Hi there👋,
                     </h2>
-                    <h3 id="sal" class="animate-on-scroll">
-                        I'm Alfred Nwachukwu Ibe
+                   <h3 id="sal" class="animate-on-scroll typewriter">
+                        I'm <span class="highlight">Alfred Ibe...</span>
                     </h3>
                     <p class="animate-on-scroll">Welcome to my personal website, I'm a tech enthusiast aspiring to be a professional Data Scientist and explore the world of AI. This website serves as proof of my frontend skills. I hope you'll enjoy the simplistic and subtle designs!</p>
                 </div>
                 
-                <div class="mt-5 animate-on-scroll">
+        <div class="mt-5 animate-on-scroll">
                     <h4 class="container text-center">What I Do</h4>
-                    <div id="feature" class="mt-4">
-						<div class="fe-box">
-							<i class="fas fa-chart-line fa-3x mb-3" style="color: #dc3545;"></i>
-							<h6>Data Analysis</h6>
-						</div>
-						<div class="fe-box">
-							<i class="fas fa-code fa-3x mb-3" style="color: #dc3545;"></i>
-							<h6>Full-stack developer</h6>
-						</div>
-						<div class="fe-box">
-							<i class="fas fa-brain fa-3x mb-3" style="color: #dc3545;"></i>
-							<h6>AI-Engineer</h6>
-						</div>
-                    </div>
+               <div id="feature" class="mt-4">
+    <div class="fe-box">
+        <i class="fas fa-chart-line fa-3x mb-3" style="color: #dc3545;"></i>
+        <h6><span>D</span><span>a</span><span>t</span><span>a</span> <span>A</span><span>n</span><span>a</span><span>l</span><span>y</span><span>s</span><span>i</span><span>s</span></h6>
+    </div>
+    <div class="fe-box">
+        <i class="fas fa-code fa-3x mb-3" style="color: #dc3545;"></i>
+        <h6><span>F</span><span>u</span><span>l</span><span>l</span><span>-</span><span>s</span><span>t</span><span>a</span><span>c</span><span>k</span> <span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span></h6>
+    </div>
+    <div class="fe-box">
+        <i class="fas fa-brain fa-3x mb-3" style="color: #dc3545;"></i>
+        <h6><span>A</span><span>I</span><span>-</span><span>E</span><span>n</span><span>g</span><span>i</span><span>n</span><span>e</span><span>e</span><span>r</span></h6>
+    </div>
+</div>
                 </div>
             </div>
             <div class="col-md-4 p-4" id="img_con">
@@ -159,22 +159,23 @@
             if (logoContainer) logoContainer.classList.add('show');
         });
         
-        document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target); // Stop observing once animated
-                    }
+       document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const spans = entry.target.querySelectorAll('.fe-box h6 span');
+                spans.forEach((char, i) => {
+                    char.style.animationDelay = `${0.8 + (i * 0.05)}s`;
                 });
-            }, {
-                root: null, // Use the viewport as the root
-                threshold: 0.1, // Trigger when 10% of the element is visible
-            });
-        
-            elements.forEach(el => observer.observe(el));
+                entry.target.classList.add('in-view');
+            }
         });
+    }, {
+        threshold: 0.2
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+});
 
         // Mobile Navigation Toggle Script
 document.addEventListener("DOMContentLoaded", function() {
@@ -244,5 +245,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
     </script>
+    <script>
+// Add this to your existing script
+document.querySelectorAll('.fe-box h6 span').forEach((char, i) => {
+    char.style.animationDelay = `${0.8 + (i * 0.05)}s`;
+});
+</script>
 </body>
 </html>
